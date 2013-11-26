@@ -1,0 +1,27 @@
+
+apply plugin: 'java'
+apply plugin: 'java-library-distribution'
+
+group = 'com.spidey01.cloudstorage'
+version = '0.0.1-SNAPSHOT'
+description = ''
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'4.11'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.9'
+}
+
+distributions {
+    main {
+        baseName archivesBaseName
+    }
+}
+
